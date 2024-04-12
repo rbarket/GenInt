@@ -1,7 +1,5 @@
-
-
-print(currentdir()):
-read "/home/barketr/Data_Labelling/Datasets/RISCH/risch_funcs.mpl";  # loads all functions in the mpl file
+# Set the current directory to where this file is located if the read function below does not work
+read "risch_funcs.mpl";  # loads all functions in the mpl file
 
 N := 10000:  # number of pairs to generate
 A := Array(1..N):
@@ -16,13 +14,16 @@ for extension in extensions do
             pair := TR_lin_gen(pick_int(), extension(arg), m=pick_int());
             A[i] := map(x -> convert(x, string), pair);
         end do:
-    
+
+# Create string based on extension and argument
     if arg = 1/x then
         str_name := cat(convert(extension, string), "(x^(-1))");
     else
         str_name := convert(extension(arg), string);
     end if:
-    file_name := cat("/home/barketr/Data_Labelling/Datasets/RISCH/", str_name, ".json"):
+
+# Export Data
+    file_name := cat("generated_data_", str_name, ".json"):
     Export(file_name, A):
     end do:
 end do:
