@@ -11,7 +11,7 @@ The main function that actually generates the pair is `TR_lin_gen()` in `risch_f
 - theta_sub: Which elementary extension we are working with (log(u) or exp(u), u in the field we are working in)
 - m: the multiplicity of the denominators of each partial fraction. If m=1, then the denominator is square-free and only the TR-algorithm is used. If m>1, perform hermite reduction until the denominator is square-free and then use the TR-algorithm
 
-The current implementation only generates linear denominators. Quadratic denominators are possible and the code in the function `lin_random_denom()` can be altered to include this case. The paper discusses the drawbacks of this and higher degree polynomials will not work due to the amount of time the `solve` command takes.
+The current implementation only generates linear denominators for each of the partial fractions generated (num_terms in `TR_lin_gen()`). Quadratic denominators are possible and the code in the function `lin_random_denom()` can be altered to include this case. The paper discusses the drawbacks of this and higher degree polynomials will not work due to the amount of time the `solve` command takes.
 
 ## Dataset
 
