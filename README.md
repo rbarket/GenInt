@@ -1,4 +1,4 @@
-# GenInt
+# Generating Elementary Integrable Expressions
 Maple Implementation of the paper [Generating Elementary Integrable Expressions](https://link.springer.com/chapter/10.1007/978-3-031-41724-5_2).
 
 ## How to use
